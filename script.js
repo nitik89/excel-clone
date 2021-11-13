@@ -93,7 +93,7 @@ for(let i=0;i<100;i++){
             align:"center",
             italic:"none",
             underline:"none",
-            bold:"normal"
+            bold:false
         }
         rowArr.push(cellObj);
     }

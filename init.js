@@ -73,11 +73,23 @@ bold.addEventListener("click",()=>{
     let ricidObj=getAdress(prevAddress);
             
     let prevCell=document.querySelector(`.grid .cell[rid='${ricidObj.rid}'][cid='${ricidObj.cid}']`);
-    prevCell.style.fontWeight=700;
-    bold.classList.add("selected");
-    console.log(prevCell.style.fontWeight);
+      
     let {rid,cid}=getAdress(prevAddress);
-    db[rid][cid].bold=700;
+    if(!db[rid][cid].bold){
+        prevCell.style.fontWeight=700;
+
+        bold.classList.add("selected");
+        db[rid][cid].bold=true;
+    }
+    else{
+        prevCell.style.fontWeight=1;
+
+        bold.classList.remove("selected");
+        db[rid][cid].bold=false;
+    }
+   
+  
+    
 })
 
 let italic=document.querySelector(".fa-italic");
@@ -87,9 +99,20 @@ italic.addEventListener("click",()=>{
     let ricidObj=getAdress(prevAddress);
             
     let prevCell=document.querySelector(`.grid .cell[rid='${ricidObj.rid}'][cid='${ricidObj.cid}']`);
-    prevCell.style.fontStyle="italic";
     let {rid,cid}=getAdress(prevAddress);
-    db[rid][cid].italic="italic";
+    if(!db[rid][cid].bold){
+        prevCell.style.fontWeight=700;
+
+        bold.classList.add("selected");
+        db[rid][cid].bold=true;
+    }
+    else{
+        prevCell.style.fontWeight=1;
+
+        bold.classList.remove("selected");
+        db[rid][cid].bold=false;
+    }
+   
     
 })
 
