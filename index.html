@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excel Clone</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="top_bar">
+        <div class="items">
+        <div class="item">Home</div>
+        <div class="item">File</div>
+        <div class="item">Insert</div>
+        <div class="item">Layout</div>
+        <div class="item">Help</div>
+        </div>
+    </div>
+    <div class="menu_bar">
+        <div class="new_open_save_container">
+            <div class="icon_container">
+                <i class="far fa-file"></i>
+            </div>
+            <div class="icon_container">
+                <i class="far fa-envelope-open"></i>
+            </div>
+            <div class="icon_container">
+                <div class="far fa-save"></div>
+            </div>
+            
+        </div>
+            <div class="formatting-container">
+                <select class="font_family_input">
+                    <option value="serif">Font-1</option>
+                    <option value="sans-serif">Font-2</option>
+                    <option value="cursive">Font-3</option>
+                    <option value="system-ui">Font-4</option>
+                </select>
+                <select  class="font_size_input">
+                    <option value="14">14</option>
+                    <option value="18">18</option>
+                    <option value="20">20</option>
+                    <option value="24">24</option>
+                </select>
+            </div>
+            <div class="bui_container">
+                <i class="far fa-bold"></i>
+                <i class="far fa-underline"></i>
+                <i class="far fa-italic"></i>
+            </div>
+            <div class="alignment_container">
+                <div class="far fa-align-right"></div>
+                <div class="far fa-align-center"></div>
+                <div class="far fa-align-justify"></div>
+                <div class="far fa-align-left"></div>
+            </div>
+
+            <div class="color_container">
+                <div class="far fa-tint"></div>
+                <div class="far fa-fill-drip"></div>
+                <input type="color" class="text_color" style="display:none" >
+                <input type="color" class="bg_color" style="display:none" >
+               
+                
+            </div>
+            
+        
+    </div>
+    <div class="formula_bar">
+        <input type="text" class="address-input">
+        <img src="pngwing.com.png" alt="">
+        <input type="text" class="formula_input" placeholder="formula">
+    </div>
+    <div class="grid_container">
+        <div class="top_left_cell">
+
+        </div>
+        <div class="top_row">
+
+        </div>
+        <div class="left_col">
+            
+        </div>
+        <div class="grid">
+            
+        </div>
+    </div>
+    <div class="sheets_container">sheets</div>
+</body>
+<script src="script.js"></script>
+<script src="init.js"></script>
+</html>
