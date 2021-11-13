@@ -25,7 +25,7 @@ for(let i=0;i<100;i++){
 
 
 let grid=document.querySelector(".grid");
-console.log(grid);
+
 for(let i=0;i<100;i++){
     let row = document.createElement("div");
     row.setAttribute("class", "row");
@@ -60,7 +60,8 @@ for(let i=0;i<100;i++){
             align:"center",
             italic:false,
             underline:false,
-            bold:false
+            bold:false,
+            value:""
         }
         rowArr.push(cellObj);
     }
@@ -68,7 +69,22 @@ for(let i=0;i<100;i++){
 }
 
 for(let i=0;i<allgridscells.length;i++){
+    allgridscells[i].addEventListener("input",(e)=>{
+        
+        let prevAddress=addressInput.value;
+        if(prevAddress !=""){
+            
+            let ricidObj=getAdress(prevAddress);
+            
+            let prevCell = document
+            .querySelector
+        (`.grid .cell[rId='${ricidObj.rid}'][cId='${ricidObj.cid}']`);
+      
+        db[ricidObj.rid][ricidObj.cid].value=e.target.innerHTML;
+        }
+    })
     allgridscells[i].addEventListener("click",(e)=>{
+        console.log(e.target);
         let prevAddress=addressInput.value;
         if(prevAddress !=""){
             
@@ -93,10 +109,10 @@ for(let i=0;i<allgridscells.length;i++){
         let cCell=allgridscells[i];
         cCell.style.border = "2px solid #1B9CFC";
        
-console.log(rid,cid);
+
         // // 2way binding menu
         let cellObj=db[rid][cid];
-        console.log(cellObj);
+       
         let fontSize=cellObj.fontSize;
         fontSizeInput.value=fontSize;
         boldIncon.classList.remove("selected");
@@ -124,7 +140,7 @@ console.log(rid,cid);
         if(cellObj.underline){
             underlineIcon.classList.add("selected");
         }
-        console.log(db);
+    
    
           
         
