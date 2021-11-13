@@ -99,18 +99,18 @@ italic.addEventListener("click",()=>{
     let ricidObj=getAdress(prevAddress);
             
     let prevCell=document.querySelector(`.grid .cell[rid='${ricidObj.rid}'][cid='${ricidObj.cid}']`);
-    let {rid,cid}=getAdress(prevAddress);
-    if(!db[rid][cid].bold){
-        prevCell.style.fontWeight=700;
+     let {rid,cid}=getAdress(prevAddress);
+    if(!db[rid][cid].italic){
+        prevCell.style.fontStyle="italic";
 
-        bold.classList.add("selected");
-        db[rid][cid].bold=true;
+        italic.classList.add("selected");
+        db[rid][cid].italic=true;
     }
     else{
-        prevCell.style.fontWeight=1;
+        prevCell.style.fontStyle="normal";
 
-        bold.classList.remove("selected");
-        db[rid][cid].bold=false;
+        italic.classList.remove("selected");
+        db[rid][cid].italic=false;
     }
    
     
@@ -123,9 +123,20 @@ uderline.addEventListener("click",()=>{
     let ricidObj=getAdress(prevAddress);
             
     let prevCell=document.querySelector(`.grid .cell[rid='${ricidObj.rid}'][cid='${ricidObj.cid}']`);
-    prevCell.style.textDecoration="underline";
     let {rid,cid}=getAdress(prevAddress);
-    db[rid][cid].underline="underline";
+ 
+    if(!db[rid][cid].underline){
+        prevCell.style.textDecoration="underline";
+    
+        uderline.classList.add("selected");
+    db[rid][cid].underline=true;
+    }
+    else{
+        prevCell.style.textDecoration="none";
+        uderline.classList.remove("selected");
+        db[rid][cid].underline=false;
+    }
+    
     
 })
 let alignment_container=document.querySelector(".alignment_container");
@@ -138,7 +149,15 @@ alignment_container.addEventListener("click",(event)=>{
    
     prevCell.style.textAlign=arr[2];
     let {rid,cid}=getAdress(prevAddress);
+   
     db[rid][cid].align=arr[2];
+
+    let optionElements=alignment_container.children;
+    for(let i=0;i<optionElements.length;i++){
+        optionElements[i].classList.remove("selected");
+    }
+    
+    event.target.classList.add("selected");
   }
 })
 // let rgt=document.querySelector(".fa-align-right");
