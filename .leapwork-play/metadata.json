@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-29T18:15:51.958Z",
+  "repo": {
+    "connectorId": 593,
+    "repoSlug": "nitik89/excel-clone",
+    "baseBranch": "main"
+  },
+  "team": {
+    "assetId": 33286,
+    "displayId": "TM-1",
+    "name": "New team"
+  },
+  "tree": [
+    {
+      "assetId": 52032,
+      "displayId": "TC-1",
+      "name": "New test case",
+      "kind": "test-case",
+      "repoPath": "TC-1-New-test-case.spec.ts"
+    }
+  ],
+  "files": [
+    {
+      "assetId": 52032,
+      "assetKind": "test-case",
+      "displayId": "TC-1",
+      "name": "New test case",
+      "repoPath": "TC-1-New-test-case.spec.ts",
+      "parentAssetId": 33286
+    }
+  ]
+}
